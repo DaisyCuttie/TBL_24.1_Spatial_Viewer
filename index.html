@@ -9,28 +9,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 :root {
-  --bg-app: #0b1220;
-  --bg-panel: rgba(13, 21, 35, 0.94);
-  --bg-panel-soft: rgba(18, 29, 47, 0.88);
-  --bg-control: #101a2d;
-  --line: #22334c;
-  --line-strong: #355179;
-  --text: #eef3fb;
-  --muted: #9eb0c6;
-  --muted-soft: #70829b;
-  --accent: #ff8b3d;
-  --accent-soft: #ffd08a;
-  --hover: rgba(255, 139, 61, 0.12);
-  --shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+  --bg-app: #f8f8f8;
+  --bg-panel: rgba(255, 255, 255, 0.95);
+  --bg-panel-soft: rgba(255, 255, 255, 0.92);
+  --bg-control: #ffffff;
+  --line: #dddddd;
+  --line-strong: #bbbbbb;
+  --text: #222222;
+  --muted: #666666;
+  --muted-soft: #888888;
+  --accent: #444444;
+  --accent-soft: #222222;
+  --hover: rgba(0, 0, 0, 0.04);
+  --shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body {
   font-family: 'Space Grotesk', 'Avenir Next', 'Segoe UI', sans-serif;
-  background:
-    radial-gradient(circle at top left, rgba(255, 139, 61, 0.16), transparent 26%),
-    radial-gradient(circle at right center, rgba(92, 168, 255, 0.12), transparent 24%),
-    linear-gradient(160deg, #09111d 0%, #10192a 48%, #0e1421 100%);
+  background: #ffffff;
   color: var(--text);
   display: flex;
   height: 100vh;
@@ -39,10 +36,10 @@ body {
 
 /* Sidebar */
 #sidebar {
-  width: 320px; min-width: 320px; background: linear-gradient(180deg, rgba(11, 18, 32, 0.96), rgba(16, 25, 42, 0.94)); display: flex; flex-direction: column;
+  width: 320px; min-width: 320px; background: var(--bg-panel); display: flex; flex-direction: column;
   border-right: 1px solid var(--line); overflow: hidden; z-index: 10; box-shadow: var(--shadow); backdrop-filter: blur(18px);
 }
-#sidebar-header { padding: 18px 18px 16px; border-bottom: 1px solid var(--line); background: linear-gradient(180deg, rgba(255, 139, 61, 0.08), rgba(255, 139, 61, 0)); }
+#sidebar-header { padding: 18px 18px 16px; border-bottom: 1px solid var(--line); background: #fafafa; }
 #sidebar-header h1 { font-size: 17px; color: var(--accent); margin-bottom: 6px; letter-spacing: -0.02em; }
 #sidebar-header .stats { font-size: 12px; color: var(--muted); }
 #sidebar-content { flex: 1; overflow-y: auto; padding: 12px; }
@@ -55,7 +52,7 @@ body {
 }
 .mode-btn:first-child { border-radius: 6px 0 0 6px; }
 .mode-btn:last-child { border-radius: 0 6px 6px 0; }
-.mode-btn.active { background: linear-gradient(135deg, rgba(255, 139, 61, 0.18), rgba(255, 208, 138, 0.08)); color: var(--accent-soft); border-color: var(--accent); }
+.mode-btn.active { background: #f0f0f0; color: var(--accent-soft); border-color: var(--line-strong); }
 
 /* Sections */
 .section { margin-bottom: 16px; }
@@ -80,7 +77,7 @@ body {
 /* Bulk actions */
 .bulk-actions { display: flex; gap: 8px; margin-bottom: 8px; }
 .bulk-btn {
-  font-size: 11px; color: var(--accent); cursor: pointer; background: none; border: none; text-decoration: underline;
+  font-size: 11px; color: #444; cursor: pointer; background: none; border: none; text-decoration: underline;
 }
 
 /* Gene search */
@@ -115,6 +112,7 @@ body {
 }
 .protein-btn:hover { border-color: var(--accent); color: var(--text); }
 .protein-btn.active { background: linear-gradient(135deg, rgba(255, 139, 61, 0.18), rgba(255, 208, 138, 0.08)); border-color: var(--accent); color: var(--accent-soft); font-weight: 600; }
+.protein-btn.active { background: #f2f2f2; }
 
 /* Colormap dropdown */
 .colormap-row { display: flex; align-items: center; gap: 8px; margin-top: 10px; margin-bottom: 4px; }
@@ -136,9 +134,9 @@ body {
 /* Selection summary bar */
 #selection-summary {
   padding: 10px 14px; border-top: 1px solid var(--line); font-size: 13px; color: var(--text);
-  background: linear-gradient(180deg, rgba(255, 139, 61, 0.06), rgba(11, 18, 32, 0.3));
+  background: #fafafa;
 }
-#selection-summary .summary-count { color: var(--accent-soft); font-weight: 700; font-size: 14px; }
+#selection-summary .summary-count { color: #333; font-weight: 700; font-size: 14px; }
 #selection-summary .summary-types {
   margin-top: 6px; font-size: 11px; color: var(--muted); line-height: 1.6;
   max-height: 120px; overflow-y: auto; display: flex; flex-wrap: wrap; gap: 4px 6px;
@@ -164,15 +162,15 @@ body {
 /* Bottom buttons */
 #sidebar-footer { padding: 12px; border-top: 1px solid var(--line); display: flex; gap: 8px; flex-wrap: wrap; }
 .action-btn {
-  flex: 1; padding: 9px 10px; text-align: center; background: linear-gradient(135deg, rgba(255, 139, 61, 0.14), rgba(92, 168, 255, 0.12)); border: 1px solid var(--line-strong);
+  flex: 1; padding: 9px 10px; text-align: center; background: #f4f4f4; border: 1px solid var(--line-strong);
   border-radius: 10px; color: var(--text); cursor: pointer; font-size: 12px; font-weight: 600; transition: all 0.2s;
   min-width: 80px;
 }
-.action-btn:hover { border-color: var(--accent); transform: translateY(-1px); }
+.action-btn:hover { border-color: #888; transform: translateY(-1px); }
 
 /* Tooltip */
 #tooltip {
-  position: fixed; pointer-events: none; background: rgba(11,18,32,0.95); border: 1px solid var(--line-strong);
+  position: fixed; pointer-events: none; background: rgba(255,255,255,0.96); border: 1px solid var(--line-strong);
   border-radius: 6px; padding: 8px 12px; font-size: 12px; z-index: 100; display: none;
   max-width: 280px; box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
@@ -181,7 +179,7 @@ body {
 
 /* Loading overlay */
 #loading {
-  position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(9, 17, 29, 0.94);
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(255, 255, 255, 0.94);
   display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 1000;
 }
 #loading .spinner { width: 40px; height: 40px; border: 3px solid var(--line); border-top-color: var(--accent); border-radius: 50%; animation: spin 0.8s linear infinite; }
@@ -189,7 +187,7 @@ body {
 #loading-text { margin-top: 16px; color: var(--muted); font-size: 14px; }
 
 /* Canvas container */
-#deck-container { flex: 1; position: relative; background: #0b1220; }
+#deck-container { flex: 1; position: relative; background: #ffffff; }
 #deck-canvas { width: 100%; height: 100%; }
 
 /* Mobile responsive */
@@ -197,7 +195,7 @@ body {
   #sidebar { position: fixed; left: -320px; transition: left 0.3s; height: 100vh; z-index: 20; }
   #sidebar.open { left: 0; }
   #menu-toggle {
-    position: fixed; top: 12px; left: 12px; z-index: 15; background: rgba(11, 18, 32, 0.9); border: 1px solid var(--line);
+    position: fixed; top: 12px; left: 12px; z-index: 15; background: rgba(255, 255, 255, 0.96); border: 1px solid var(--line);
     color: var(--text); padding: 8px 12px; border-radius: 10px; cursor: pointer; font-size: 18px; display: block; box-shadow: var(--shadow);
   }
 }
@@ -245,6 +243,7 @@ body {
   border-radius: 11px; cursor: pointer; transition: background 0.2s;
 }
 .toggle-switch.active { background: linear-gradient(135deg, rgba(255, 139, 61, 0.18), rgba(92, 168, 255, 0.18)); border-color: var(--accent); }
+.toggle-switch.active { background: #f1f1f1; }
 .toggle-switch .toggle-knob {
   position: absolute; top: 2px; left: 2px; width: 16px; height: 16px; background: var(--muted);
   border-radius: 50%; transition: all 0.2s;
@@ -282,8 +281,8 @@ body {
     <!-- Point size slider (only in point mode) -->
     <div class="slider-row" id="point-size-row">
       <label>Point size</label>
-      <input type="range" id="point-size-slider" min="4" max="8" step="0.1" value="6.8" oninput="setPointSize(this.value)">
-      <span class="slider-val" id="point-size-val">6.8</span>
+      <input type="range" id="point-size-slider" min="0.2" max="2.5" step="0.1" value="0.7" oninput="setPointSize(this.value)">
+      <span class="slider-val" id="point-size-val">0.7</span>
     </div>
 
     <!-- Polygon outline slider (only in polygon mode) -->
@@ -391,7 +390,7 @@ let currentGeneExpr = null;
 let celltypeVisible = {};  // {typeName: bool}
 let celltypeColors = {};   // {typeName: [r,g,b]}
 let deckgl = null;
-let pointRadius = 6.8;
+let pointRadius = 0.7;
 let polyOutlineWidth = 0.5;
 let renderMode = 'points'; // 'points' or 'polygons'
 
@@ -411,16 +410,37 @@ let captureScreenshot = false; // flag for screenshot capture
 // ============================================================================
 // Default 28-color palette (distinguishable)
 // ============================================================================
-const DEFAULT_PALETTE = [
-  [230, 25, 75],   [60, 180, 75],   [255, 225, 25],  [0, 130, 200],
-  [245, 130, 48],  [145, 30, 180],  [70, 240, 240],  [240, 50, 230],
-  [210, 245, 60],  [250, 190, 212], [0, 128, 128],   [220, 190, 255],
-  [170, 110, 40],  [255, 250, 200], [128, 0, 0],     [170, 255, 195],
-  [128, 128, 0],   [255, 215, 180], [0, 0, 128],     [128, 128, 128],
-  [230, 190, 255], [255, 127, 80],  [100, 149, 237], [144, 238, 144],
-  [255, 182, 193], [218, 165, 32],  [72, 209, 204],  [255, 99, 71],
-  [147, 112, 219], [60, 179, 113],  [255, 165, 0],   [106, 90, 205]
-];
+function hslToRgb(h, s, l) {
+  s /= 100;
+  l /= 100;
+  const c = (1 - Math.abs(2 * l - 1)) * s;
+  const hp = h / 60;
+  const x = c * (1 - Math.abs((hp % 2) - 1));
+  let r = 0, g = 0, b = 0;
+  if (hp >= 0 && hp < 1) [r, g, b] = [c, x, 0];
+  else if (hp < 2) [r, g, b] = [x, c, 0];
+  else if (hp < 3) [r, g, b] = [0, c, x];
+  else if (hp < 4) [r, g, b] = [0, x, c];
+  else if (hp < 5) [r, g, b] = [x, 0, c];
+  else [r, g, b] = [c, 0, x];
+  const m = l - c / 2;
+  return [
+    Math.round((r + m) * 255),
+    Math.round((g + m) * 255),
+    Math.round((b + m) * 255)
+  ];
+}
+
+function buildSeuratPalette(n) {
+  const palette = [];
+  for (let i = 0; i < n; i++) {
+    const hue = (15 + (360 * i) / n) % 360;
+    palette.push(hslToRgb(hue, 90, 52));
+  }
+  return palette;
+}
+
+const DEFAULT_PALETTE = buildSeuratPalette(64);
 
 // Colormaps (10 stops each for interpolation)
 const COLORMAPS = {
@@ -455,6 +475,9 @@ const COLORMAPS = {
 const VIRIDIS = COLORMAPS.viridis;
 
 let currentColormap = 'viridis';
+const COLOR_PREF_KEY = 'spatial_viewer_colors_spatialdim_v1';
+const COLORMAP_PREF_KEY = 'spatial_viewer_colormap_spatialdim_v1';
+const BG_PREF_KEY = 'spatial_viewer_bg_spatialdim_v1';
 
 // Protein state
 let proteinList = null;    // {proteinName: filename, ...} or null
@@ -566,7 +589,7 @@ function setLoadingText(text) {
 // Color Preferences (localStorage)
 // ============================================================================
 function loadColorPreferences() {
-  const saved = localStorage.getItem('spatial_viewer_colors');
+  const saved = localStorage.getItem(COLOR_PREF_KEY);
   const savedObj = saved ? JSON.parse(saved) : {};
 
   metadata.cell_types.forEach((ct, i) => {
@@ -580,7 +603,7 @@ function loadColorPreferences() {
 }
 
 function saveColorPreferences() {
-  localStorage.setItem('spatial_viewer_colors', JSON.stringify(celltypeColors));
+  localStorage.setItem(COLOR_PREF_KEY, JSON.stringify(celltypeColors));
 }
 
 // ============================================================================
@@ -636,7 +659,7 @@ function rebuildColors() {
       colors[i * 4]     = rgb[0];
       colors[i * 4 + 1] = rgb[1];
       colors[i * 4 + 2] = rgb[2];
-      colors[i * 4 + 3] = visible ? 185 : 0;
+      colors[i * 4 + 3] = visible ? 225 : 0;
     }
   } else if (currentMode === 'expression' && currentGeneExpr) {
     const expr = currentGeneExpr;
@@ -650,17 +673,17 @@ function rebuildColors() {
         continue;
       }
       if (val === 0) {
-        colors[i * 4]     = 30;
-        colors[i * 4 + 1] = 30;
-        colors[i * 4 + 2] = 30;
-        colors[i * 4 + 3] = 55;
+        colors[i * 4]     = 220;
+        colors[i * 4 + 1] = 220;
+        colors[i * 4 + 2] = 220;
+        colors[i * 4 + 3] = 90;
       } else {
         const t = Math.min(val / maxVal, 1);
         const rgb = colormapInterp(t);
         colors[i * 4]     = rgb[0];
         colors[i * 4 + 1] = rgb[1];
         colors[i * 4 + 2] = rgb[2];
-        colors[i * 4 + 3] = 190;
+        colors[i * 4 + 3] = 225;
       }
     }
   } else {
@@ -668,10 +691,10 @@ function rebuildColors() {
     for (let i = 0; i < N; i++) {
       const ct = getCelltype(i);
       const visible = celltypeVisible[ct] !== false;
-      colors[i * 4]     = 80;
-      colors[i * 4 + 1] = 80;
-      colors[i * 4 + 2] = 80;
-      colors[i * 4 + 3] = visible ? 80 : 0;
+      colors[i * 4]     = 205;
+      colors[i * 4 + 1] = 205;
+      colors[i * 4 + 2] = 205;
+      colors[i * 4 + 3] = visible ? 110 : 0;
     }
   }
 }
@@ -703,7 +726,7 @@ function switchAnnotation(key) {
     metadata.n_celltypes = metadata.annotations[key].n_celltypes;
   }
   // Re-initialize colors for new cell types
-  const saved = localStorage.getItem('spatial_viewer_colors');
+  const saved = localStorage.getItem(COLOR_PREF_KEY);
   const savedObj = saved ? JSON.parse(saved) : {};
   celltypeColors = {};
   celltypeVisible = {};
@@ -821,23 +844,14 @@ function createLayers() {
       data: {length: N},
       getPosition: (_, {index}) => [positions[index * 3], positions[index * 3 + 1], 0],
       getFillColor: (_, {index}) => [colors[index * 4], colors[index * 4 + 1], colors[index * 4 + 2], colors[index * 4 + 3]],
-      getLineColor: (_, {index}) => {
-        const alpha = colors[index * 4 + 3];
-        return alpha > 0 ? [7, 12, 20, Math.min(alpha + 25, 210)] : [0, 0, 0, 0];
-      },
       getRadius: pointRadius,
       radiusUnits: 'pixels',
-      radiusMinPixels: 0.4,
-      radiusMaxPixels: 10,
-      stroked: true,
-      lineWidthUnits: 'pixels',
-      lineWidthMinPixels: 0.35,
-      getLineWidth: (_, {index}) => colors[index * 4 + 3] > 0 ? 0.6 : 0,
+      radiusMinPixels: 0.2,
+      radiusMaxPixels: 4,
+      stroked: false,
       pickable: true,
       updateTriggers: {
         getFillColor: colorTrigger,
-        getLineColor: colorTrigger,
-        getLineWidth: colorTrigger,
         getRadius: [pointRadius]
       },
       parameters: { depthTest: false }
@@ -1247,7 +1261,7 @@ function clearProtein(skipUpdate) {
 // Colormap Selection
 // ============================================================================
 function loadColormapPreference() {
-  const saved = localStorage.getItem('spatial_viewer_colormap');
+  const saved = localStorage.getItem(COLORMAP_PREF_KEY);
   if (saved && COLORMAPS[saved]) {
     currentColormap = saved;
     document.getElementById('colormap-select').value = saved;
@@ -1255,7 +1269,7 @@ function loadColormapPreference() {
 
   document.getElementById('colormap-select').addEventListener('change', (e) => {
     currentColormap = e.target.value;
-    localStorage.setItem('spatial_viewer_colormap', currentColormap);
+    localStorage.setItem(COLORMAP_PREF_KEY, currentColormap);
     updateLegendGradient();
     if (currentGeneExpr) updateLayer();
   });
@@ -1389,18 +1403,18 @@ function hexToRgb(hex) {
 // ============================================================================
 // Background Color
 // ============================================================================
-let bgColor = [11, 18, 32]; // default #0b1220
+let bgColor = [255, 255, 255]; // default #ffffff
 
 function setBgColor(hex) {
   bgColor = hexToRgb(hex);
   document.getElementById('bg-color-label').textContent = hex;
   document.getElementById('deck-container').style.background = hex;
   document.body.style.background = hex;
-  localStorage.setItem('spatial_viewer_bg', hex);
+  localStorage.setItem(BG_PREF_KEY, hex);
 }
 
 function loadBgColor() {
-  const saved = localStorage.getItem('spatial_viewer_bg');
+  const saved = localStorage.getItem(BG_PREF_KEY);
   if (saved) {
     document.getElementById('bg-color-picker').value = saved;
     setBgColor(saved);

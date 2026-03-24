@@ -282,8 +282,8 @@ body {
     <!-- Point size slider (only in point mode) -->
     <div class="slider-row" id="point-size-row">
       <label>Point size</label>
-      <input type="range" id="point-size-slider" min="1" max="24" value="3" oninput="setPointSize(this.value)">
-      <span class="slider-val" id="point-size-val">3</span>
+      <input type="range" id="point-size-slider" min="0.4" max="8" step="0.1" value="1.2" oninput="setPointSize(this.value)">
+      <span class="slider-val" id="point-size-val">1.2</span>
     </div>
 
     <!-- Polygon outline slider (only in polygon mode) -->
@@ -391,7 +391,7 @@ let currentGeneExpr = null;
 let celltypeVisible = {};  // {typeName: bool}
 let celltypeColors = {};   // {typeName: [r,g,b]}
 let deckgl = null;
-let pointRadius = 3;
+let pointRadius = 1.2;
 let polyOutlineWidth = 0.5;
 let renderMode = 'points'; // 'points' or 'polygons'
 
@@ -636,7 +636,7 @@ function rebuildColors() {
       colors[i * 4]     = rgb[0];
       colors[i * 4 + 1] = rgb[1];
       colors[i * 4 + 2] = rgb[2];
-      colors[i * 4 + 3] = visible ? 220 : 0;
+      colors[i * 4 + 3] = visible ? 185 : 0;
     }
   } else if (currentMode === 'expression' && currentGeneExpr) {
     const expr = currentGeneExpr;
@@ -653,14 +653,14 @@ function rebuildColors() {
         colors[i * 4]     = 30;
         colors[i * 4 + 1] = 30;
         colors[i * 4 + 2] = 30;
-        colors[i * 4 + 3] = 100;
+        colors[i * 4 + 3] = 55;
       } else {
         const t = Math.min(val / maxVal, 1);
         const rgb = colormapInterp(t);
         colors[i * 4]     = rgb[0];
         colors[i * 4 + 1] = rgb[1];
         colors[i * 4 + 2] = rgb[2];
-        colors[i * 4 + 3] = 220;
+        colors[i * 4 + 3] = 190;
       }
     }
   } else {
@@ -821,13 +821,23 @@ function createLayers() {
       data: {length: N},
       getPosition: (_, {index}) => [positions[index * 3], positions[index * 3 + 1], 0],
       getFillColor: (_, {index}) => [colors[index * 4], colors[index * 4 + 1], colors[index * 4 + 2], colors[index * 4 + 3]],
+      getLineColor: (_, {index}) => {
+        const alpha = colors[index * 4 + 3];
+        return alpha > 0 ? [7, 12, 20, Math.min(alpha + 25, 210)] : [0, 0, 0, 0];
+      },
       getRadius: pointRadius,
       radiusUnits: 'pixels',
-      radiusMinPixels: 1,
-      radiusMaxPixels: 28,
+      radiusMinPixels: 0.4,
+      radiusMaxPixels: 10,
+      stroked: true,
+      lineWidthUnits: 'pixels',
+      lineWidthMinPixels: 0.35,
+      getLineWidth: (_, {index}) => colors[index * 4 + 3] > 0 ? 0.6 : 0,
       pickable: true,
       updateTriggers: {
         getFillColor: colorTrigger,
+        getLineColor: colorTrigger,
+        getLineWidth: colorTrigger,
         getRadius: [pointRadius]
       },
       parameters: { depthTest: false }
@@ -1262,7 +1272,7 @@ function updateLegendGradient() {
 // ============================================================================
 function setPointSize(val) {
   pointRadius = Number(val);
-  document.getElementById('point-size-val').textContent = val;
+  document.getElementById('point-size-val').textContent = Number(val).toFixed(1);
   updateLayer();
 }
 

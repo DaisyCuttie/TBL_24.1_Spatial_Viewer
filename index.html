@@ -281,8 +281,8 @@ body {
     <!-- Point size slider (only in point mode) -->
     <div class="slider-row" id="point-size-row">
       <label>Point size</label>
-      <input type="range" id="point-size-slider" min="0.2" max="2.5" step="0.1" value="0.7" oninput="setPointSize(this.value)">
-      <span class="slider-val" id="point-size-val">0.7</span>
+      <input type="range" id="point-size-slider" min="0.2" max="2.5" step="0.1" value="1.1" oninput="setPointSize(this.value)">
+      <span class="slider-val" id="point-size-val">1.1</span>
     </div>
 
     <!-- Polygon outline slider (only in polygon mode) -->
@@ -390,7 +390,7 @@ let currentGeneExpr = null;
 let celltypeVisible = {};  // {typeName: bool}
 let celltypeColors = {};   // {typeName: [r,g,b]}
 let deckgl = null;
-let pointRadius = 0.7;
+let pointRadius = 1.1;
 let polyOutlineWidth = 0.5;
 let renderMode = 'points'; // 'points' or 'polygons'
 

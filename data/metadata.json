@@ -1,0 +1,27 @@
+{
+  "dataset_name": "TBL Spatial 24.1",
+  "n_cells": 338703,
+  "n_celltypes": 28,
+  "cell_types": ["Blood Endothelial", "cDC1", "cDC2", "CXCL9⁺ inflammatory moDC", "Cycling cells", "Cytotoxic T/NKT", "DCSTAMP⁺ fusion macrophages", "Fibroblasts", "Follicular B cells", "FOLR2⁺ resident macrophages", "Germinal B cells", "IFN-stimulated T cells", "LAMP3 DC", "Lymphatic Endothelial", "Mast cells", "Memory B cells", "migratory LC, inflammatory LC", "Naïve B cells", "Naive T cells", "Neuron Tonsil cells", "NK cells", "pDC", "Plasma cells", "SPP1 remodeling macrophages", "Th17", "TIMD4⁺ resident macrophages", "Treg", "Type I IFN macrophages"],
+  "n_genes": 500,
+  "has_polygons": true,
+  "has_proteins": false,
+  "n_proteins": 0,
+  "bounds": {
+    "x_min": 0.0016,
+    "x_max": 5.6291,
+    "y_min": 8.3897,
+    "y_max": 14.5297
+  },
+  "celltype_col": "predicted.id",
+  "assay_name": "RNA",
+  "image_name": "TBL.24.4.samples.1k.RNA.2.12.25",
+  "expression_layer": "data",
+  "annotations": {
+    "celltype": {
+      "label": "predicted.id",
+      "cell_types": ["Blood Endothelial", "cDC1", "cDC2", "CXCL9⁺ inflammatory moDC", "Cycling cells", "Cytotoxic T/NKT", "DCSTAMP⁺ fusion macrophages", "Fibroblasts", "Follicular B cells", "FOLR2⁺ resident macrophages", "Germinal B cells", "IFN-stimulated T cells", "LAMP3 DC", "Lymphatic Endothelial", "Mast cells", "Memory B cells", "migratory LC, inflammatory LC", "Naïve B cells", "Naive T cells", "Neuron Tonsil cells", "NK cells", "pDC", "Plasma cells", "SPP1 remodeling macrophages", "Th17", "TIMD4⁺ resident macrophages", "Treg", "Type I IFN macrophages"],
+      "n_celltypes": 28
+    }
+  }
+}

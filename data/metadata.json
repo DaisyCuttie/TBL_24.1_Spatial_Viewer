@@ -8,10 +8,10 @@
   "has_proteins": false,
   "n_proteins": 0,
   "bounds": {
-    "x_min": 11,
-    "x_max": 4244,
-    "y_min": 10,
-    "y_max": 4245
+    "x_min": 0.0016,
+    "x_max": 5.6291,
+    "y_min": 8.3897,
+    "y_max": 14.5297
   },
   "celltype_col": "predicted.id",
   "assay_name": "RNA",

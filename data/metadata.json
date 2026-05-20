@@ -1,27 +1,27 @@
 {
   "dataset_name": "TBL Spatial 24.1",
-  "n_cells": 286274,
-  "n_celltypes": 14,
-  "cell_types": ["B cells", "Blood Endothelial", "cDC1", "Cycling cells", "Fibroblasts", "Follicular DCs", "Germinal B cells", "LAMP3 DC", "Lymphatic Endothelial", "Macrophage cells", "Mast cells", "pDC", "Plasma cells", "T cells"],
+  "n_cells": 333788,
+  "n_celltypes": 21,
+  "cell_types": ["B cells", "Blood Endothelial", "C1QC+ macrophages", "Cycling cells", "Cytotoxic CD8 T/NK cells", "Dendritic cells", "Fibroblasts", "Inflammatory myeloid cells", "LAMP3+ mature DCs", "Naive B cells", "Naive/central memory T cells", "NK cells", "pDCs", "Plasma cells", "Proliferating B/plasma cells", "SPP1+ macrophages", "Stromal fibroblasts", "Th17/Th1-like T cells", "TIMD4+ resident macrophages", "Tregs", "Unknown"],
   "n_genes": 500,
   "has_polygons": true,
   "has_proteins": false,
   "n_proteins": 0,
   "bounds": {
     "x_min": 0.0016,
-    "x_max": 5.6289,
-    "y_min": 8.3908,
+    "x_max": 5.6291,
+    "y_min": 8.3906,
     "y_max": 14.5297
   },
-  "celltype_col": "predicted.id",
+  "celltype_col": "cell_type",
   "assay_name": "RNA",
   "image_name": "TBL.24.4.samples.1k.RNA.2.12.25",
   "expression_layer": "data",
   "annotations": {
     "celltype": {
-      "label": "predicted.id",
-      "cell_types": ["B cells", "Blood Endothelial", "cDC1", "Cycling cells", "Fibroblasts", "Follicular DCs", "Germinal B cells", "LAMP3 DC", "Lymphatic Endothelial", "Macrophage cells", "Mast cells", "pDC", "Plasma cells", "T cells"],
-      "n_celltypes": 14
+      "label": "cell_type",
+      "cell_types": ["B cells", "Blood Endothelial", "C1QC+ macrophages", "Cycling cells", "Cytotoxic CD8 T/NK cells", "Dendritic cells", "Fibroblasts", "Inflammatory myeloid cells", "LAMP3+ mature DCs", "Naive B cells", "Naive/central memory T cells", "NK cells", "pDCs", "Plasma cells", "Proliferating B/plasma cells", "SPP1+ macrophages", "Stromal fibroblasts", "Th17/Th1-like T cells", "TIMD4+ resident macrophages", "Tregs", "Unknown"],
+      "n_celltypes": 21
     },
     "dataset": {
       "label": "Dataset",

@@ -14,9 +14,6 @@
     "y_max": 14.5297
   },
   "celltype_col": "predicted_celltype",
-  "assay_name": "RNA",
-  "image_name": "TBL.24.4.samples.1k.RNA.2.12.25",
-  "expression_layer": "data",
   "annotations": {
     "celltype": {
       "label": "predicted_celltype",
